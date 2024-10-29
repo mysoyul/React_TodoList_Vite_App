@@ -1,11 +1,11 @@
 import React from 'react';
-import '@components/TodoListTemplate.css';
+import './TodoListTemplate.css';
 
 const TodoListTemplate = ({ form, children }) => {
     return (
         <main className="todo-list-template">
             <div className="title">
-                오늘의 할 일 ({ import.meta.env.VITE_MODE })
+                오늘의 할 일 ({import.meta.env.VITE_TITLE})
             </div>
             <section className="form-wrapper">
                 {form}
