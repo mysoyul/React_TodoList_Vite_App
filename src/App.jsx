@@ -64,7 +64,7 @@ class App extends Component {
   }; //handleRemove
 
   render() {
-    const { todo, todos } = this.state;
+    const { todo } = this.state;
     const {
       handleChange,
       handleCreate,
@@ -85,7 +85,6 @@ class App extends Component {
         }
       >
         <TodoItemList
-          mytodos={todos}
           myToggle={handleToggle}
           myRemove={handleRemove}
         />
