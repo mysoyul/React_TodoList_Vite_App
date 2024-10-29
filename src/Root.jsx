@@ -1,8 +1,8 @@
+import App from './App';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { configureStore } from '@reduxjs/toolkit';
 
-import App from './App';
 //import { toDoReducer } from './reducers';
 import todosSlice from '@/reducers/todosSlice';
 
