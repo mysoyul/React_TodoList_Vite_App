@@ -6,7 +6,7 @@ export const ADD_TODO = "ADD_TODO";
 
 const apiUrl = 'http://localhost:4500/api/todos';
 
-//Todo 등록
+//Todo 등록 Action 함수
 export const addTodo = (todo) => {
     return (dispatch) => {
         axios.post(apiUrl, todo)
@@ -19,7 +19,7 @@ export const addTodo = (todo) => {
                 throw (error);
             })
     }
-}
+}; //addTodo
 
 //Todo 목록조회 Action 함수
 export const fetchAllTodos = () => {
