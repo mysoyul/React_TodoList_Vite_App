@@ -81,4 +81,5 @@ const todosSlice = createSlice({
     }
 });
 
+//reducer 속성은 Slice가 포함하고 있는 Reducer를 반환한다.
 export default todosSlice.reducer;
