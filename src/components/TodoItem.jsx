@@ -1,7 +1,8 @@
 import { Component } from "react";
 import { connect } from "react-redux";
 
-import { removeTodo, toggleTodo } from "@/actions";
+//import { removeTodo, toggleTodo } from "@/actions";
+import { removeTodo, toggleTodo } from '@/reducers/todoSlice';
 import "@components/TodoItem.css";
 
 class TodoItem extends Component {

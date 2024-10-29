@@ -2,7 +2,8 @@ import { Component } from "react";
 import { connect } from "react-redux";
 
 import TodoItem from "@components/TodoItem";
-import { fetchAllTodos } from "@/actions";
+//import { fetchAllTodos } from "@/actions";
+import { fetchAllTodos } from '@/reducers/todoSlice';
 
 class TodoItemList extends Component {
   componentDidMount() {
