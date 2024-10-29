@@ -8,7 +8,8 @@ const initialState = {
             checked: false,
         }
     ]
-}
+};
+    
 export const toDoReducer = (state = initialState, action) => {
     switch (action.type) {
         case types.FETCH_TODOS:
