@@ -1,5 +1,8 @@
 import { Component } from "react";
-import "./Form.css";
+import { connect } from 'react-redux';
+
+import { addTodo } from '@/actions';
+import "@components/Form.css";
 
 class Form extends Component {
   state = {
@@ -14,15 +17,16 @@ class Form extends Component {
   };
 
   handleCreate = () => {
-    const { todo, todos } = this.state;
+    const { todo } = this.state;
     const newTodo = {
-      id: this.id++,
       text: todo,
       checked: false,
     };
 
+    //Action 함수 addTodo 호출
+    this.props.addTodo(newTodo);
+
     this.setState({
-      todos: [...todos, newTodo],
       todo: "", // input 초기화
     });
   };
@@ -35,11 +39,13 @@ class Form extends Component {
   }; //handleEnter
 
   render() {
-    const { todo, myEnter, myChange, myCreate } = this.props;
+    const { todo } = this.state;
+    const { handleChange, handleCreate, handleEnter } = this;
+
     return (
       <div className="form">
-        <input value={todo} onChange={myChange} onKeyDown={myEnter} />
-        <div className="create-button" onClick={myCreate}>
+        <input value={todo} onChange={handleChange} onKeyDown={handleEnter} />
+        <div className="create-button" onClick={handleCreate}>
           추가
         </div>
       </div>
@@ -47,4 +53,4 @@ class Form extends Component {
   }
 }
 
-export default Form;
+export default connect(null, { addTodo })(Form);
