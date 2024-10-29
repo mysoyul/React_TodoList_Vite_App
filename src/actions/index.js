@@ -4,8 +4,25 @@ import axios from 'axios';
 export const FETCH_TODOS = "FETCH_TODOS";
 export const ADD_TODO = "ADD_TODO";
 export const REMOVE_TODO = "REMOVE_TODO";
+export const TOGGLE_TODO = "TOGGLE_TODO";
 
 const apiUrl = 'http://localhost:4500/api/todos';
+
+//Todo 수정 Action 함수
+export const toggleTodo = todo => {
+    return (dispatch) => {
+        axios.patch(`${apiUrl}/${todo.id}`, todo)
+            .then(res =>
+                dispatch({
+                    type: TOGGLE_TODO,
+                    payload: res.data
+                }))
+            .catch(error => {
+                console.log(error);
+                throw (error);
+            })
+    }
+}; //toggleTodo
 
 //Todo 삭제 Action 함수
 export const removeTodo = id => {
