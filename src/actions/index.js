@@ -6,7 +6,8 @@ export const ADD_TODO = "ADD_TODO";
 export const REMOVE_TODO = "REMOVE_TODO";
 export const TOGGLE_TODO = "TOGGLE_TODO";
 
-const apiUrl = 'http://localhost:4500/api/todos';
+const apiUrl = import.meta.env.VITE_API_URL;
+//'http://localhost:4500/api/todos';
 
 //Todo 수정 Action 함수
 export const toggleTodo = todo => {
