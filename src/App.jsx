@@ -1,7 +1,7 @@
 import { Component } from "react";
-import Form from "./components/Form";
-import TodoItemList from "./components/TodoItemList";
-import TodoListTemplate from "./components/TodoListTemplate";
+import Form from "@components/Form";
+import TodoItemList from "@components/TodoItemList";
+import TodoListTemplate from "@components/TodoListTemplate";
 
 const initialTodos = new Array(500)
   .fill(0)
